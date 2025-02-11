@@ -33,57 +33,58 @@ const data = [
 
 
 export default function App() {
-  return <main className="bg-green h-screen w-screen font-ubuntu object-center bg-cover bg-center font-light overflow-scroll p-10">
-    <a href="/" className="text-white flex p-0 w-fit text-center mx-auto sm:mx-0 tracking-widest font-light text-xl bg-bg"><span className="pl-2 pr-1.5 block">WEEBLABS</span> <span className="text-bg block h-full bg-white pl-1.5 pr-1">:3</span></a>
+  return <main className="min-h-screen w-screen font-ubuntu bg-green overflow-x-hidden">
+    {/* Enhanced header with hover effect */}
+    <a href="/" className="fixed top-8 left-8 text-white flex p-0 w-fit text-center tracking-widest font-light text-xl bg-bg hover:scale-105 transition-transform duration-200 rounded shadow-lg">
+      <span className="pl-3 pr-2 block">WEEBLABS</span>
+      <span className="text-bg block h-full bg-white pl-2 pr-1.5 rounded-r">:3</span>
+    </a>
 
-    <div className="flex flex-col items-center justify-center w-full h-[85%]">
-      <div className="mx-auto w-fit text-6xl px-2">
-        building <span className="font-bold">software</span> that's actually <span className="font-bold">useful</span>
-        <img className="w-16 h-16 inline relative bottom-4 ml-2" src={OC.hi} />
+    {/* Hero section with animation */}
+    <div className="flex flex-col items-center justify-center min-h-screen px-4 animate-fadeIn">
+      <div className="text-center">
+        <h1 className="text-6xl  font-light leading-tight mb-6">
+          building <span className="font-bold bg-bg text-white px-2 rounded">software</span>
+          <br className="sm:hidden" /> that's actually
+          <br className="sm:hidden" /> <span className="font-bold bg-bg text-white px-2 rounded">useful</span>
+          <img className="h-22 inline relative bottom-4 ml-2" src={OC.hi} />
+        </h1>
       </div>
     </div>
 
-    <div className="flex flex-col items-center justify-center w-full h-[18%]">
-      <div className="flex flex-col items-center gap-2">
-        our creations 👇
-      </div>
-    </div>
-
-    <div className="flex flex-col gap-5 items-center justify-center">
-      {data.map((item) => <div className="flex flex-row gap-4 bg-white border border-bg/30 p-6 w-full sm:max-w-[70%]">
-        <img src={item.image} alt={item.title} className="w-24 h-24 object-contain aspect-square rounded-2xl" />
-        <div className="flex flex-col gap-2 w-full">
-          <div className="text-2xl font-bold">{item.title}</div>
-          <div className="text-sm">{item.description}</div>
-          <a href={item.link} target="_blank" className="text-sm text-white bg-bg p-0.5 px-2 ml-auto w-fit">{item.linkText}</a>
-        </div>
-      </div>)}
-    </div>
-
-    {/* team */}
-    <div className="flex flex-col gap-5 items-center justify-center w-full h-[18%] mt-40">
-      <div className="flex flex-col items-center gap-2">
-        an initiative by
-      </div>
-      <div className="flex flex-row gap-4 items-center justify-center">
-        <img src="https://github.com/ankushKun.png" alt="Weeblabs" className="w-24 h-24 object-contain aspect-square rounded-2xl" />
-        <div className="flex flex-col gap-2">
-          <div className="text-xl font-bold">weebletKun</div>
-          <div className="flex flex-col gap-0.5">
-            <a href="https://x.com/ankushKun_" target="_blank" className="text-sm text-white bg-bg p-0.5 px-2 w-fit">Follow on X</a>
+    {/* Projects section */}
+    <div className="px-4 py-16 sm:py-20">
+      <h2 className="text-xl sm:text-2xl font-bold text-center mb-8 sm:mb-12">our creations ✨</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
+        {data.map((item) => (
+          <div className="bg-white border border-bg/10 p-6 sm:p-8 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div className="flex flex-col items-center">
+              <img src={item.image} alt={item.title} className="w-24 h-24 sm:w-32 sm:h-32 object-contain aspect-square rounded-2xl shadow-md mb-4" />
+              <div className="flex flex-col gap-2 sm:gap-3 text-center w-full">
+                <div className="text-2xl sm:text-3xl font-bold text-bg">{item.title}</div>
+                <div className="text-base sm:text-lg text-gray-600">{item.description}</div>
+                <a href={item.link} target="_blank" className="text-sm text-white bg-bg p-2 px-4 mx-auto w-fit rounded hover:bg-bg/80 transition-colors duration-200 shadow-md">{item.linkText}</a>
+              </div>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
 
-    {/* footer */}
-    <div className="flex flex-col items-center justify-center w-full h-[20%] mt-40">
-      <div className="flex flex-row gap-2">
-        follow weeblabs:
-        <a href="https://x.com/weeblabs" target="_blank" className="text-sm text-white bg-bg p-0.5 px-2 ml-auto w-fit">X (Twitter)</a>
-        <a href="https://github.com/weeblabs69" target="_blank" className="text-sm text-white bg-bg p-0.5 px-2 ml-auto w-fit">GitHub</a>
-        {"👉👈"}
+    {/* Footer */}
+    <footer className=" py-8 sm:py-10 px-4 border-t border-bg/10 mt-64 bg-white/30">
+      <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 items-center justify-center text-center">
+        <span className="text-base sm:text-lg">follow weeblabs:</span>
+        <div className="flex gap-2">
+          <a href="https://x.com/weeblabs" target="_blank" className="text-sm text-bg hover:underline underline-offset-4 p-2">
+            <span className="font-medium">X (Twitter)</span>
+          </a>
+          <a href="https://github.com/weeblabs69" target="_blank" className="text-sm text-bg hover:underline underline-offset-4 p-2">
+            <span className="font-medium">GitHub</span>
+          </a>
+        </div>
+        <span className="text-xl hidden sm:inline">👉👈</span>
       </div>
-    </div>
+    </footer>
   </main>
 }
