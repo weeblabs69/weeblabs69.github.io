@@ -39,7 +39,7 @@ export default function App() {
     <div className="flex flex-col items-center justify-center w-full h-[85%]">
       <div className="mx-auto w-fit text-6xl px-2">
         building <span className="font-bold">software</span> that's actually <span className="font-bold">useful</span>
-        <img className="w-16 h-16 inline relative" src={OC.hi} />
+        <img className="w-16 h-16 inline relative bottom-4 ml-2" src={OC.hi} />
       </div>
     </div>
 
