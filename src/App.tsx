@@ -28,6 +28,13 @@ const data = [
     link: "https://betteridea.dev",
     linkText: "Explore ↗",
     image: "https://betteridea.dev/logo.png"
+  },
+  {
+    title: "Call Me Maybe",
+    description: "Swipe less, vibe more, call me maybe? video dating app",
+    link: "https://callmemaybe.xyz",
+    linkText: "Open ↗",
+    image: "https://www.callmemaybe.xyz/icon.webp"
   }
 ]
 
