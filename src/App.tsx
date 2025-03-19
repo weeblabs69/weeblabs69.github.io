@@ -26,8 +26,22 @@ const data = [
     title: "BetterIDEa",
     description: "IDE + Developer Tools for Arweave/AO ecosystem",
     link: "https://betteridea.dev",
-    linkText: "Explore ↗",
+    linkText: "Open ↗",
     image: "https://betteridea.dev/logo.png"
+  },
+  {
+    title: "Visual AO",
+    description: "Visual Programming for AO processes",
+    link: "https://visual-ao.arnode.asia",
+    linkText: "Open ↗",
+    image: "https://visual-ao.arnode.asia/logo.png"
+  },
+  {
+    title: "ZapCord",
+    description: "AI for building discord servers",
+    link: "https://zapcord.xyz",
+    linkText: "Open ↗",
+    image: "https://zapcord.xyz/zapcord.png"
   },
   {
     title: "Call Me Maybe",
@@ -66,7 +80,7 @@ export default function App() {
         {data.map((item) => (
           <div className="bg-white border border-bg/10 p-6 sm:p-8 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="flex flex-col items-center">
-              <img src={item.image} alt={item.title} className="w-24 h-24 sm:w-32 sm:h-32 object-contain aspect-square rounded-2xl shadow-md mb-4" />
+              <img src={item.image} alt={item.title} className="w-24 h-24 sm:w-32 sm:h-32 object-contain aspect-square rounded-2xl mb-4" />
               <div className="flex flex-col gap-2 sm:gap-3 text-center w-full">
                 <div className="text-2xl sm:text-3xl font-bold text-bg">{item.title}</div>
                 <div className="text-base sm:text-lg text-gray-600">{item.description}</div>
